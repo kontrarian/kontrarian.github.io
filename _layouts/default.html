@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#" xmlns:og="http://opengraphprotocol.org/schema/">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+  {% if page.class == "page_wide" %}
+    <meta name="viewport" content="width=900" />
+  {% else %}
+    <meta name="viewport" content="width=640" />
+  {% endif %}
+
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Fira+Sans:200,400,400i" rel="stylesheet">
+  <link href='/assets/style.css' rel='stylesheet' type='text/css' />
+  <title>Mike Jackson | {{ page.title }}</title>
+
+  <meta name="author" content="Mike Jackson" />
+  
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:url" content="https://mikejackson.dev{{ page.url }}" />
+  {% if page.categories contains 'blog' %}
+    <meta property="og:type" content="article" />
+
+    <meta property="article:published_time" content='{{ page.date | date: "%Y-%m-%d" }}' />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ page.title }}" />
+  {% endif %}
+
+  {% if page.summary %}
+    <meta property="og:description" content="{{ page.summary }}" />
+    <meta name="twitter:description" content="{{ page.summary }}" />
+  {% endif %}
+</head>
+<body>
+<div class="page {{ page.class }}">
+  <nav class="nav">
+    <a class="nav__brand" href="/">Mike <strong>Jackson</strong></a>
+    <ul class="nav__menu menu">
+      {% if page.title == 'Blog' %}
+        <li><span class="menu__item menu__item_selected">Blog</span>
+      {% else %}
+        <li><a class="menu__item" href="/">Blog</a>
+      {% endif %}
+
+      {% if page.title == 'About' %}
+        <li><span class="menu__item menu__item_selected">About</span>
+      {% else %}
+        <li><a class="menu__item" href="/about">About</a>
+      {% endif %}
+    </ul>
+  </nav>
+
+{{ content }}
