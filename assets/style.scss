@@ -20,7 +20,9 @@ body {
   margin: 50px auto;
 }
 .page { width: 600px; margin: 0 auto; padding: 0 0 0 2px; }
-.page_wide { width: 810px; }
+.page p {
+  line-height: 2em;
+}
 
 .nav {
   display: flex;
@@ -40,11 +42,11 @@ a.menu__item:hover { color: inherit; border-color: #73808D; border-width: 2px; }
 .menu__item_inside, a.menu__item_inside { border-bottom: 2px solid #73808D; }
 
 h1, h2 { 
-  font: 200 1em 'Fira Sans'; 
-  margin: 2.5em 0 0.5em; 
+  font: 400 1em 'Fira Sans'; 
+  margin: 1.5em 0 0.5em; 
 }
 
-h1 { font-size: 1.7em; margin-bottom: 1.2em; }
+h1 { font-size: 1.7em; }
 h2 { font-size: 1.4em; }
 h1, h2 { color: $color-darkest; }
 
