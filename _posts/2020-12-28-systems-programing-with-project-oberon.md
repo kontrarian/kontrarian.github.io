@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Project Oberon"
+title: "Systems Programming with Project Oberon"
 category: blog
 ---
 
